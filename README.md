@@ -25,4 +25,4 @@ Expliquons brievement le rôle joué par chacune des briques visibles sur ce sch
 
 ## Mise en place ##
 ### Intel Galileo ###
-Bla bla bla
+Bla bla bla   

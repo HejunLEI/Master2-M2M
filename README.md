@@ -13,6 +13,8 @@ Notre but fut alors de remonter les données de notre détecteur de fumée vers 
 
 ![alt tag](https://github.com/DevYourWorld/Master2-M2M/blob/master/etc/infrastructure.png?raw=true)
 
+
+
 Expliquons brievement le rôle joué par chacune des briques visibles sur ce schéma:
 * **Script d'initialisation et de lecture des données du capteur:** Initialiser l'entrée analogique A0 de l'Intel Galileo. Lire celle-ci, et envoyé les données reçues en entrée via "mosquitto_pub".
 * **Mosquitto publisher:** mosquitto_pub compilé pour l'OS "Clanton".
@@ -25,4 +27,4 @@ Expliquons brievement le rôle joué par chacune des briques visibles sur ce sch
 
 ## Mise en place ##
 ### Intel Galileo ###
-Bla bla bla   
+#### Installation ####

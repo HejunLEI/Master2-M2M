@@ -8,10 +8,4 @@ Dans le cadre de l'UE M2M, nous avons été emmennés à mettre en place une inf
 * 2 Cables électriques
 
 Notre but fut alors de remonter les données de notre détecteur de fumée vers un serveur réunissant en théorie les données de plusieurs capteurs. L'infrastructure imaginée est telle que ci-dessous:
-+---------------------------------------+  +------------------------+
-| Galileo                               |  | Serveur                |
-|    +-----------+      +-----------+   |  |                        |
-|    | Script de | ===> | Mosquitto | =======>                      |
-|    |  lecture  |      | publisher |   |  |                        |
-|    +-----------+      +-----------+   |  |                        |
-+---------------------------------------+  +------------------------+
+![alt tag](https://github.com/DevYourWorld/Master2-M2M/blob/master/infrastructure.png?raw=true)

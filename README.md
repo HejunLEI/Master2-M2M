@@ -55,7 +55,7 @@ Afin de communiquer via mosquitto, nous avons dut compiler une version de ce der
 
 Vous pouvez dèsormais build votre propre version de mosquitto pour l'Intel Galileo! Pour cela, téléchargez la [dernière version de mosquitto](http://mosquitto.org/download/). Vous pouvez ensuite utiliser la commande "make" pour compiler votre version de mosquitto.
 
-Une fois mosquitto installé, vous pouvez utiliser le [script](https://github.com/DevYourWorld/Master2-M2M/blob/master/files/hacksignal.sh) disponible sur ce même repository. Pour mieux comprendre le fonctionnement de ce script, nous vous invitons à consulter le site [malinov.com](http://www.malinov.com/Home/sergey-s-blog/intelgalileo-programminggpiofromlinux).
+Une fois mosquitto installé, vous pouvez utiliser le [script](https://github.com/DevYourWorld/Master2-M2M/blob/master/galileo/hacksignal.sh) disponible sur ce même repository. Pour mieux comprendre le fonctionnement de ce script, nous vous invitons à consulter le site [malinov.com](http://www.malinov.com/Home/sergey-s-blog/intelgalileo-programminggpiofromlinux).
 
 Pour que celui-ci fonctionne, vous devrez impérativement brancher votre détecteur de fumée sur l'entrée analogique 0 (A0) de votre Intel Galileo. 
 Afin de ne pas griller votre carte, nous vous invittons à respecter le schéma suivant:

@@ -28,15 +28,26 @@ Expliquons brievement le rôle joué par chacune des briques visibles sur ce sch
 ## Mise en place ##
 ### Intel Galileo ###
 Avant de commencer, il nous a fallu mettre à jour le firmware de notre Intel Galileo. Pour celà, nous avons suivi les instructions disponibles à l'adresse suivante: http://air.imag.fr/images/2/29/Galileo_GettingStarted.pdf .
+
 Nous avons ensuite formaté une carte miniSD de façon à ce que celle-ci soit bootable.
+
 **Sous Windows :**
 	>diskpart.exe
+
 	select vol e	//la lettre correspondant à la carte SD
+
 	clean
+
 	create part primary
+
 	active
+
 	format quick label="BOOTME"
+
 	exit
+
 **Sous Linux :**
+
 	TODO
+
 Puis nous avons installé l'OS Clanton sur une carte SD, dont plusieurs versions sont disponibles, en prévision d'utiliser openHAB sur l'Intel Galileo, la version utilisée est "Yocto Project Linux image w/ Clanton-full kernel + general SDKs + Oracle JDK 8 + Tomcat", mais une version moins complète (au moins sans Java), devrai suffire. Clanton est téléchargeable à l'adresse suivante: http://ccc.ntu.edu.tw/index.php/en/news/40 .

@@ -64,3 +64,11 @@ Afin de ne pas griller votre carte, nous vous invittons à respecter le schéma 
 ![alt tag](https://github.com/DevYourWorld/Master2-M2M/blob/master/etc/branchements.png?raw=true)
 
 ### Serveur distant ###
+Le serveur distant que nous avons utilisé fut une machine utilisant Xubuntu 13.10. La configuration et l'installation expliquée ci-dessous concerneront donc cette version de Xubuntu.
+
+Tout d'abord, certaines briques ne necessitent pas ou très peu de configuration, nous vous proposons de vous les procurer en premier:
+
+	sudo add-apt-repository ppa:mosquitto-dev/mosquitto-ppa
+	sudo apt-get update
+	sudo apt-get install mosquitto
+	sudo apt-get install mongodb-server

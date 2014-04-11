@@ -101,7 +101,7 @@ Nous devons maintenant utiliser ces différentes briques. Pour cela, nous allons
 
 Puis déclarer des items utilisant mosquitto en entrée/sortie dans le fichier "configuration/items/m2m.items":
 
-	Switch M2M_Fumee { mqtt="<\[mosquitto:smokedetector:state:default\]" }
-	Switch M2M_Feu { mqtt=">\[mosquitto:fire:command:ON:ON\],>\[mosquitto:fire:command:OFF:OFF\]" }
+	Switch M2M_Fumee { mqtt="<[mosquitto:smokedetector:state:default]" }
+	Switch M2M_Feu { mqtt=">[mosquitto:fire:command:ON:ON],>[mosquitto:fire:command:OFF:OFF]" }
 
 

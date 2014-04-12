@@ -119,4 +119,15 @@ Une fois lancé, Node-RED peut être utilisé à l'adresse suivante: "http://loc
 
 Les fichiers relatifs à notre installation de node-red sont disponibles sur ce même repository ([Node-RED](https://github.com/DevYourWorld/Master2-M2M/blob/master/serveur_distant/node-red)).
 
+
 **mqtt-panel**
+
+Avant toutes choses, il faut nous procurer mqtt-panel, téléchargeable ici: [ici](https://github.com/fabaff/mqtt-panel).
+
+Il faut tout comme Node-RED, installer les dépendances exigées via npm:
+
+	npm install mqtt socket.io
+
+Puis ensuite éditer le fichier "index.html" afin que celui-ci couvre nos besoins. Dans le cas présent, nous avons besoin que le status de "smokedetector" et "fire" soient donnés, nous avons aussi rajouté un graphe lié à la présence d'un incendie, juste pour comprendre un peu mieux mqtt.
+
+Le fichier index.html est disponible sur ce même repository ([mqtt-panel](https://github.com/DevYourWorld/Master2-M2M/blob/master/serveur_distant/mqtt-panel)).

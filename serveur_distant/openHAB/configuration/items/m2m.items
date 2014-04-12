@@ -1,0 +1,2 @@
+Switch M2M_Fumee { mqtt="<[mosquitto:smokedetector:state:default]" }
+Switch M2M_Feu { mqtt=">[mosquitto:fire:command:ON:ON],>[mosquitto:fire:command:OFF:OFF]" }

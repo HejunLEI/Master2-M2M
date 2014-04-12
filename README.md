@@ -41,10 +41,6 @@ Nous avons ensuite formaté une carte miniSD de façon à ce que celle-ci soit b
 	format quick label="BOOTME"
 	exit
 
-**Sous Linux :**
-
-	TODO
-
 
 Puis nous avons décompressé l'OS Clanton sur une carte SD, en prévision d'utiliser openHAB sur l'Intel Galileo nous avons utilisé la version "Yocto Project Linux image w/ Clanton-full kernel + general SDKs + Oracle JDK 8 + Tomcat", mais une version moins complète (du moins sans Java), devrai suffire. Clanton est téléchargeable à l'adresse suivante: http://ccc.ntu.edu.tw/index.php/en/news/40 .
 
@@ -77,7 +73,7 @@ Tout d'abord, certaines briques ne necessitent pas ou très peu de configuration
 	sudo apt-get install mosquitto
 	sudo apt-get install mongodb-server
 
-Editez ensuite le fichier "/etc/init.d/mongodb" pour ajouter l'argument "--rest" au lancement de ce dernier. L'option "--rest" de MongoDB permet de consulter toutes les entrées en base à partir de son lancement à une URL de type: "http://localhost:28017/BD/Collection" par défaut.
+Editez ensuite le fichier "/etc/init.d/mongodb" pour ajouter l'argument "--rest" au lancement de ce dernier. L'option "--rest" de MongoDB permet de consulter toutes les entrées en base à partir de son lancement à une URL de type: "http://localhost:28017/BD/Collection" par défaut. Les données consultablent respectent le format JSON.
 
 
 **openHAB**
@@ -104,4 +100,23 @@ Puis déclarer des items utilisant mosquitto en entrée/sortie dans le fichier "
 	Switch M2M_Fumee { mqtt="<[mosquitto:smokedetector:state:default]" }
 	Switch M2M_Feu { mqtt=">[mosquitto:fire:command:ON:ON],>[mosquitto:fire:command:OFF:OFF]" }
 
+Ici, <[...] correspond à un subscribe et >[...] correspond à un publish. Les items sont tous les deux des switch car ils ne possèdent que deux états: allumé lors de la présence de fumée et éteint sinon.
 
+Le lien entre les 2 items et l'émission d'un son se fait dans les règles d'openHAB, plus précisement dans le fichier "configuration/rules/rules.rules".
+
+Les fichiers relatifs à notre utilisation d'openHAB sont disponibles sur ce même repository ([openHAB](https://github.com/DevYourWorld/Master2-M2M/blob/master/serveur_distant/openHAB)).
+
+
+**Node-RED**
+
+Il ne nous reste maintenant plus que deux briques à mettre en place: mqtt-panel et Node-RED. Nous nous interesserons à cette dernière téléchargeable [ici](http://nodered.org/).
+
+Node-RED est ici utilisé pour subscribe à notre serveur mqtt et notifier MongoDB quand un nouvel évènement se produit. Pour cela, vous devrez installer via npm les extensions necessaires pour communiquer via mqtt et pour écrire dans une base de donnée mongodb.
+
+Une fois lancé, Node-RED peut être utilisé à l'adresse suivante: "http://localhost:1880/". Afin que les données stockées soient réellement utilisables, nous avons aussi stoqué leur timestamp afin de pouvoir les classer par ordre d'évènements.
+
+![alt tag](https://github.com/DevYourWorld/Master2-M2M/blob/master/etc/node-red.png?raw=true)
+
+Les fichiers relatifs à notre installation de node-red sont disponibles sur ce même repository ([Node-RED](https://github.com/DevYourWorld/Master2-M2M/blob/master/serveur_distant/node-red)).
+
+**mqtt-panel**

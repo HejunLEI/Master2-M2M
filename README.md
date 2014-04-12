@@ -130,4 +130,6 @@ Il faut tout comme Node-RED, installer les dépendances exigées via npm:
 
 Puis ensuite éditer le fichier "index.html" afin que celui-ci couvre nos besoins. Dans le cas présent, nous avons besoin que le status de "smokedetector" et "fire" soient donnés, nous avons aussi rajouté un graphe lié à la présence d'un incendie, juste pour comprendre un peu mieux mqtt.
 
+![alt tag](https://github.com/DevYourWorld/Master2-M2M/blob/master/etc/mqtt-panel.png?raw=true)
+
 Le fichier index.html est disponible sur ce même repository ([mqtt-panel](https://github.com/DevYourWorld/Master2-M2M/blob/master/serveur_distant/mqtt-panel)).

@@ -133,3 +133,49 @@ Puis ensuite éditer le fichier "index.html" afin que celui-ci couvre nos besoin
 ![alt tag](https://github.com/DevYourWorld/Master2-M2M/blob/master/etc/mqtt-panel.png?raw=true)
 
 Le fichier index.html est disponible sur ce même repository ([mqtt-panel](https://github.com/DevYourWorld/Master2-M2M/blob/master/serveur_distant/mqtt-panel)).
+
+
+## Difficultés ##
+
+Durant ce projet, nous avons fait face à quelques difficultés, les principales ont été pour nous:
+* Le branchement du détecteur de fumée à l'Intel Galileo qui nous a beaucoup inquiété car vu que l'alimentation venait du détecteur, si nous nous trompions la carte qui grillait. Nous avons d'ailleur fait appel à de l'aide extérieur pour être sur à 100% que notre circuit était bon, malgrès sa simplicité.
+* Trouver comment avoir un comportement similaire aux sketch sur la distribution Clanton de l'Intel galileo, le site [malinov.com](http://www.malinov.com/Home/sergey-s-blog/intelgalileo-programminggpiofromlinux) nous a été très utile.
+* Configurer un serveur DHCP sur notre machine Linux pour pouvoir brancher directement notre carte à notre machine.
+
+
+## Conclusion ##
+
+Les métriques que nous avons privilégié ont été le nombre de ligne de code et l'argent économisé via un tel projet. Afin d'estimer l'argent économisée, nous avons utilisé le site [ohloh.net](http://www.ohloh.net) pour nous procurer ces estimations. Selon ce site, les ressourcent utilisées valent respectivement:
+
+* **openHAB:** 2615215$
+* **mosquitto:** 580591$
+* **node-red:** 314177$
+* **mongodb:** 8885063$
+* **mqtt-panel:** non estimé
+
+Nous économisons donc au minimum 12395046$ en réutilisant des projets open source, et ce sans compter les dépendances de ces derniers (tel qu'openHAB qui dépend d'OSGi). Cette utilisation de projets open source permet à la fois un gain conséquent d'argent, mais aussi de temps, car un tel projet peu être développé extrèmement rapidement. Ce fait est d'ailleur traduit par le faible nombre de ligne de code de ce projet:
+
+* **galileo - hacksignal.sh:** 32 lignes de code
+* **mqtt-panel - index.html:** 116 lignes de code
+* **node-red - fonction "timestamp":** 5 lignes de code
+* **openhab - openhab_default.cfg:** 1 ligne de code
+* **openhab - rules.rules:** 22 lignes de code
+* **openhab - m2m.items:** 2 lignes de code
+
+Donc un total de 178 lignes de codes principalements remplis par le fichier "index.html" de "mqtt-panel" qui est un fichier réutilisé. Donc où le nombre de ligne de codes réellement produit est en réalité bien moindre.
+
+**En conclusion,** un tel projet représente une économie conséquente pour une entreprise, que ça soit sur le plan humain ou sur le plan économique. TODO: Belle conclusion
+
+
+## Remerciements ##
+
+Nous tenons à remercier:
+
+* [openHAB](http://www.openhab.org/)
+* [mosquitto](http://mosquitto.org/)
+* [Node-RED](http://nodered.org/)
+* [fabaff](https://github.com/fabaff) pour [mqtt-panel](https://github.com/fabaff/mqtt-panel)
+* [Intel](http://www.intel.fr/)
+* [malinov.com](http://www.malinov.com/Home/sergey-s-blog/intelgalileo-programminggpiofromlinux)
+* [air.imag](http://air.imag.fr)
+* [Didiez Donsez](http://membres-liglab.imag.fr/donsez/) pour nous avoir permis de découvrir ces technologies

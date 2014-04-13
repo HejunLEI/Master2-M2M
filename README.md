@@ -164,7 +164,7 @@ Nous économisons donc au minimum 12395046$ en réutilisant des projets open sou
 
 Donc un total de 178 lignes de codes principalements remplis par le fichier "index.html" de "mqtt-panel" qui est un fichier réutilisé, donc le nombre de lignes de code réellement produites est en réalité bien moindre.
 
-**En conclusion,** un tel projet nous a permis de réaliser à quel point il est rapide de réaliser une solution **complète**, **fonctionelle**, et **utilisable** en un temps minime et un budget quasi-nul en associant des frameworks opensource adaptés. TODO : la suite de la belle conclusion ^^
+**En conclusion,** un tel projet nous a permis de réaliser à quel point il est rapide de produire une solution **complète**, **fonctionelle**, et **utilisable** en un temps minime et un budget quasi-nul en associant des frameworks opensource adaptés. TODO : la suite de la belle conclusion ^^
 
 
 ## Remerciements ##

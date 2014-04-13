@@ -1,8 +1,8 @@
 # Projet M2M de Master 2 #
 
 ## Introduction ##
-Dans le cadre de l'UE M2M, nous avons été emmennés à mettre en place une infrastructure de collecte de données depuis des capteurs à l'aide d'une carte de type arduino. Pour cela, le matériel mis à notre disposition fut:
-* 1 Carte Intel Galileo (et de quoi la brancher en USB et en Ethernet)
+Dans le cadre de l'UE M2M, nous avons été amennés à mettre en place une infrastructure de collecte de données depuis des capteurs à l'aide d'une carte de type arduino. Pour cela, le matériel mis à notre disposition fut:
+* 1 Carte Intel Galileo (et la connectique nécéssaire pour la brancher en USB et en Ethernet)
 * 1 Détecteur de fumée
 * 1 Platine d'expérimentation (Prototype breadboard) 
 * 2 Résistances
@@ -16,12 +16,12 @@ Notre but fut alors de remonter les données de notre détecteur de fumée vers 
 
 
 Expliquons brievement le rôle joué par chacune des briques visibles sur ce schéma:
-* **Script d'initialisation et de lecture des données du capteur:** Initialiser l'entrée analogique A0 de l'Intel Galileo. Lire celle-ci, et envoyé les données reçues en entrée via "mosquitto_pub".
+* **Script d'initialisation et de lecture des données du capteur:** Initialiser l'entrée analogique A0 de l'Intel Galileo. Lire celle-ci, et envoyer les données reçues en entrée via "mosquitto_pub".
 * **Mosquitto publisher:** mosquitto_pub compilé pour l'OS "Clanton". Client mosquitto dédié à la publication sur un serveur mosquitto.
 * **Serveur mosquitto:** Serveur mosquitto standard. Permet d'utiliser un système de "Publish and subscribe" sur des mots clés donnés.
-* **openHAB:** Récupères le status du detecteur de fumée (ON/OFF). Détermines si il y a vraiment incendie, et publie sur le serveur mosquitto la présence ou l'absence réelle d'un incendie.
+* **openHAB:** Récupères le status du detecteur de fumée (ON/OFF). Détermine si il y a vraiment incendie, et publie sur le serveur mosquitto la présence réelle ou non d'un incendie.
 * **Node-RED:** Fait passerelle entre le serveur mosquitto et MongoDB. Chaque évènement publié sur le serveur mosquitto est enregistré en base. Node-RED sert à réaliser facilement des liens entres divers applications, I/O, ... .
-* **MongoDB:** Base de donnée enregistrant tous les évènements liés aux capteurs. MongoDB est un base de donnée de type SQL.
+* **MongoDB:** Base de données enregistrant tous les évènements liés aux capteurs. MongoDB est un base de donnée de type SQL.
 * **mqtt-panel:** Permet de visualiser via une interface web l'état actuel de l'infrastructure.
 
 
@@ -48,7 +48,7 @@ L'Intel Galileo bootera automatiquement sur la version de Clanton que vous aurez
 
 Avant de continuer, vous devrez pouvoir vous connecter en SSH à votre Intel Galileo. Pour cela, branchez votre Intel Galileo à votre routeur, ou mettez en palce un serveur DHCP sur votre propre machine et connectez l'Intel Galileo directement à celle-ci. Les manipulations à venir se feront directement sur votre carte Intel Galileo via SSH (ou autre protocol).
 
-Afin de communiquer via mosquitto, nous avons dut compiler une version de ce dernier. Hors mosquitto possède une dépendance à la bibliothèque "c-ares", qui n'est malheureusement pas présente sur l'installation initiale de Clanton. Nous avons donc dut build notre propre version de c-ares sur notre Intel Galileo. Pour cela, nous vous conseillons de suivre les indications du fichier "INSTALL" présent dans [l'archive de c-ares](http://c-ares.haxx.se/download/).
+Afin de communiquer via mosquitto, nous avons dut compiler une version de ce dernier. Hors, mosquitto possède une dépendance à la bibliothèque "c-ares", qui n'est malheureusement pas présente sur l'installation initiale de Clanton. Nous avons donc dut build notre propre version de c-ares sur notre Intel Galileo. Pour cela, nous vous conseillons de suivre les indications du fichier "INSTALL" présent dans [l'archive de c-ares](http://c-ares.haxx.se/download/).
 
 Vous pouvez dèsormais build votre propre version de mosquitto pour l'Intel Galileo! Pour cela, téléchargez la [dernière version de mosquitto](http://mosquitto.org/download/). Vous pouvez ensuite utiliser la commande "make" pour compiler votre version de mosquitto.
 
@@ -66,7 +66,7 @@ Le serveur distant que nous avons utilisé fut une machine utilisant Xubuntu 13.
 
 **Mosquitto et MongoDB**
 
-Tout d'abord, certaines briques ne necessitent pas ou très peu de configuration, c'est le cas de Mosquitto et de MongoDB. Nnous vous proposons de vous les procurer en premier:
+Tout d'abord, certaines briques ne necessitent pas ou très peu de configuration, c'est le cas de Mosquitto et de MongoDB. Nous vous proposons de vous les procurer en premier:
 
 	sudo add-apt-repository ppa:mosquitto-dev/mosquitto-ppa
 	sudo apt-get update
@@ -162,9 +162,9 @@ Nous économisons donc au minimum 12395046$ en réutilisant des projets open sou
 * **openhab - rules.rules:** 22 lignes de code
 * **openhab - m2m.items:** 2 lignes de code
 
-Donc un total de 178 lignes de codes principalements remplis par le fichier "index.html" de "mqtt-panel" qui est un fichier réutilisé. Donc où le nombre de ligne de codes réellement produit est en réalité bien moindre.
+Donc un total de 178 lignes de codes principalements remplis par le fichier "index.html" de "mqtt-panel" qui est un fichier réutilisé, donc le nombre de lignes de code réellement produites est en réalité bien moindre.
 
-**En conclusion,** un tel projet représente une économie conséquente pour une entreprise, que ça soit sur le plan humain ou sur le plan économique. TODO: Belle conclusion
+**En conclusion,** un tel projet nous a permis de réaliser à quel point il est rapide de réaliser une solution **complète**, **fonctionelle**, et **utilisable** en un temps minime et un budget quasi-nul en associant des frameworks opensource adaptés. TODO : la suite de la belle conclusion ^^
 
 
 ## Remerciements ##

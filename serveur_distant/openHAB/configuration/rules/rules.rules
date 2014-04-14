@@ -10,7 +10,7 @@ when
         Item M2M_Fumee changed from OFF to ON
 then   
         sendCommand(M2M_Feu,ON)
-	say("OH MY GOD, RUUUUUUUUUUUN")
+	say("Fire detected")
 end
 
 rule feuEtteint
@@ -18,6 +18,6 @@ when
         Item M2M_Fumee changed from ON to OFF
 then   
         sendCommand(M2M_Feu,OFF)
-	say("NEVERMIND, IT IS OKAY, AHAHAHAHAH")
+	say("everything is okay")
 end
 

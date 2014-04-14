@@ -21,7 +21,7 @@ Expliquons brievement le rôle joué par chacune des briques visibles sur ce sch
 * **Serveur mosquitto:** Serveur mosquitto standard. Permet d'utiliser un système de "Publish and subscribe" sur des mots clés donnés.
 * **openHAB:** Récupères le status du detecteur de fumée (ON/OFF). Détermine si il y a vraiment incendie, et publie sur le serveur mosquitto la présence réelle ou non d'un incendie.
 * **Node-RED:** Fait passerelle entre le serveur mosquitto et MongoDB. Chaque évènement publié sur le serveur mosquitto est enregistré en base. Node-RED sert à réaliser facilement des liens entres divers applications, I/O, ... .
-* **MongoDB:** Base de données enregistrant tous les évènements liés aux capteurs. MongoDB est un base de donnée de type SQL.
+* **MongoDB:** Base de données enregistrant tous les évènements liés aux capteurs. MongoDB est un base de donnée de type NoSQL.
 * **mqtt-panel:** Permet de visualiser via une interface web l'état actuel de l'infrastructure.
 
 
